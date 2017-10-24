@@ -12,9 +12,9 @@ import { PassengerSearchComponent } from "../passenger-search/passenger-search.c
 
 export const FLIGHT_SEARCH_ROUTES: Routes = [
     {
-        path: 'flight-booking',
+        path: '',
         component: FlightBookingComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         children: [
             {
                 path: 'flight-search',
@@ -27,7 +27,7 @@ export const FLIGHT_SEARCH_ROUTES: Routes = [
             {
                 path: 'flight-edit/:id',
                 component: FlightEditComponent,
-                // canDeactivate: [ExitGuard],
+                canDeactivate: [ExitGuard],
                 resolve: {
                     flight: FlightResolver
                 }

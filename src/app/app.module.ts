@@ -22,9 +22,12 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
     FormsModule,
     HttpModule,
     HttpClientModule,
-    FlightBookingModule,  
     
-    RouterModule.forRoot(APP_ROUTES),
+    // FlightBookingModule,  // Prevent Lazy Loading
+    
+    RouterModule.forRoot(APP_ROUTES, {
+      enableTracing: true
+    }),
     
     SharedModule.forRoot(),
     OAuthModule.forRoot()
